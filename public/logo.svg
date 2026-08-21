@@ -1,0 +1,8 @@
+<svg width="188" height="40" viewBox="0 0 188 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PopPulse">
+  <!-- mark -->
+  <rect x="0" y="4" width="30" height="30" fill="#111111"/>
+  <path d="M9 12 L15 9 L21 12 L21 20 L15 28 L9 20 Z" fill="#e31e24"/>
+
+  <!-- wordmark -->
+  <text x="40" y="28" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="800" fill="#111111">Pop<tspan fill="#e31e24">Pulse</tspan></text>
+</svg>
