@@ -34,6 +34,7 @@ export default function CelebrityLeadSection() {
     ["red-carpet-showdown-this-weekend", "Duis Aute Irure Dolor In Reprehenderit", "Business"],
      ["hollywoods-rising-stars-to-watch", "Tempor Incididunt Ut Labore Et Dolore", "Entertainment"],
       ["runway-to-real-life-fashion", "Lorem Ipsum Dolor Sit Amet", "Technology"],
+       ["y2k-fashion-is-back", "Magna Aliqua Lorem Ipsum", "Technology"],
   ];
 
   return (
@@ -60,7 +61,7 @@ export default function CelebrityLeadSection() {
               return (
                 <Link href={`/${item.category}/${item.slug}`} className="reference-latest-item" key={slug}>
                   <h3>{title}</h3>
-                  <div className="reference-meta"><span>2 years ago</span><span className="reference-red">{category}</span></div>
+                  <div className="reference-meta"><span className="reference-red">{category}</span></div>
                 </Link>
               );
             })}
@@ -68,9 +69,7 @@ export default function CelebrityLeadSection() {
           </aside>
         </div>
 
-        <div className="reference-mini-grid">
-          {mini.map((post) => <MiniCard post={post} key={post.slug} />)}
-        </div>
+     
       </div>
     </section>
   );
