@@ -2687,7 +2687,7 @@ p {
 .article-side-box{margin-bottom:22px}
 .article-side-title{text-align:center;border:1px solid #222;border-bottom:2px solid #222;padding:7px 5px;margin:30px 0 0px;font-family:var(--font-display);font-size:18px;text-transform:uppercase}
 .popular-list{display:grid;grid-gap:8px;grid-gap:8px;grid-gap:8px;gap:8px}
-.popular-item{display:grid;grid-template-columns:150px 0.8fr;grid-gap:7px;grid-gap:12px;grid-gap:12px;gap:12px;border-bottom:1px solid #eee;padding-bottom:20px;padding-top:15px}
+.popular-item{display:grid;grid-template-columns:150px 1fr;grid-gap:7px;grid-gap:12px;grid-gap:12px;gap:12px;border-bottom:1px solid #eee;padding-bottom:10px;padding-top:15px}
 .popular-item img{width:100%;height:105px;object-fit:cover}
 .popular-item strong{display:block;font-family:var(--font-display);font-size:15px;line-height:1.1}
 .popular-tag{display:inline-block;background:#ed1c24;color:#fff;padding:2px 4px;font-size:10px;text-transform:capitalize;margin-bottom:3px}
