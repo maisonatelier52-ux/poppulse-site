@@ -3400,4 +3400,11 @@ html, body {
     padding-left: 0px; 
     
 }
+.reference-header .trending-strip-title {
+    font-size: 10px;
+    line-height: 1.1;
+}
+.reference-header .trending-strip-item .tag {
+    font-size: 9px;
+}
 }
