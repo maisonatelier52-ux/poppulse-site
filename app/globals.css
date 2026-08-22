@@ -3407,4 +3407,7 @@ html, body {
 .reference-header .trending-strip-item .tag {
     font-size: 9px;
 }
+    .article-heading h1 {
+        font-size: 35px;
+    }
 }
