@@ -3411,4 +3411,8 @@ html, body {
         font-size: 35px;
     }
     .article-lead:first-letter{font-family:var(--font-display);font-size:40px;line-height:.7;float:left;padding:9px 9px 0 0}
+    .mag-footer-links strong {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
 }
