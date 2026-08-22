@@ -3410,4 +3410,5 @@ html, body {
     .article-heading h1 {
         font-size: 35px;
     }
+    .article-lead:first-letter{font-family:var(--font-display);font-size:40px;line-height:.7;float:left;padding:9px 9px 0 0}
 }
