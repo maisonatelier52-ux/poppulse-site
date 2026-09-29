@@ -7,7 +7,7 @@ import SectionContainedSticky from "@/components/SectionContainedSticky";
 
 function Meta({ post }) {
   const author = getAuthorBySlug(post.author);
-  return <div className="mag-meta"><span>2 years ago</span><span>By <b>{author?.name || "Clara Quick"}</b></span></div>;
+  return <div className="mag-meta"><span>3 hrs ago</span><span>By <b>{author?.name || "Clara Quick"}</b></span></div>;
 }
 
 function SmallCard({ post, overlay = false }) {
@@ -38,9 +38,9 @@ function FeatureCard({ post, badge }) {
   );
 }
 
-export default function CategoryBlock({ slug, variant = "feature", showAd = false }) {
+export default function CategoryBlock({ slug, variant = "feature", showAd = false, posts: postsProp }) {
   const category = getCategoryBySlug(slug);
-  const posts = getPostsByCategory(slug);
+  const posts = postsProp || getPostsByCategory(slug);
   if (!posts.length) return null;
 
   const isTravel = slug === "sports";
@@ -79,8 +79,8 @@ export default function CategoryBlock({ slug, variant = "feature", showAd = fals
           <div className="fashion-feature-layout">
             <FeatureCard post={posts[0]} badge="" />
             <div className="fashion-side-card">
-              <SmallCard post={posts.find((p) => p.slug === "y2k-fashion-is-back") || posts[1]} overlay />
-              <SmallCard post={posts.find((p) => p.slug === "throwback-y2k-runway-return") || posts[2]} />
+              {posts[1] && <SmallCard post={posts[1]} overlay />}
+              {posts[2] && <SmallCard post={posts[2]} />}
             </div>
           </div>
         ) : (

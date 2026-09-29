@@ -33,7 +33,7 @@ export default function CategoryPage({ params }) {
           <div className="layout-with-sidebar">
             <div>
               {posts.length === 0 ? (
-                <p className="search-empty">Lorem ipsum dolor sit amet.</p>
+                <p className="search-empty">No stories in this section yet — check back soon.</p>
               ) : (
                 <div className="article-grid article-grid--2">
                   {posts.map((post) => <ArticleCard key={post.slug} post={post} />)}

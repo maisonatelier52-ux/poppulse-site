@@ -4,8 +4,8 @@ import Image from "next/image";
 import { photo } from "@/lib/images";
 import SectionContainedSticky from "@/components/SectionContainedSticky";
 
-export default function LatestNewsSection() {
-  const posts = getAllPosts().slice(0, 7);
+export default function LatestNewsSection({ posts }) {
+  const items = posts || getAllPosts().slice(0, 7);
   return (
     <section data-contained-sticky-section className="latest-mag-section">
       <div className="wrap">
@@ -13,7 +13,7 @@ export default function LatestNewsSection() {
           <div>
             <div className="latest-heading"><span>Latest News</span></div>
             <div className="latest-mag-list">
-              {posts.map((post) => {
+              {items.map((post) => {
                 const category = getCategoryBySlug(post.category);
                 const author = getAuthorBySlug(post.author);
                 return (
@@ -23,7 +23,7 @@ export default function LatestNewsSection() {
                     </Link>
                     <div className="latest-mag-copy">
                       <Link href={`/${post.category}/${post.slug}`}><h3>{post.title}</h3></Link>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>{post.excerpt}</p>
                       <div className="mag-meta"><span>{formatDate(post.date)}</span><span>By {author.name}</span><span className="latest-category">{category?.name}</span></div>
                     </div>
                   </article>

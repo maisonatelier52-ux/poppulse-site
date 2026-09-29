@@ -36,7 +36,7 @@ export default function PostPage({ params }) {
             <div className="article-byline">
               <Image src={author.avatar} alt="" width={28} height={28} />
               <span><b>{author.name}</b> · {author.role} · {formatDate(post.date)}</span>
-              <span className="article-updated">Last updated: December 5, 2024 5:38 am</span>
+              <span className="article-updated">Last updated: September 6, 2026 5:38 am</span>
             </div>
            
           </header>
@@ -50,27 +50,31 @@ export default function PostPage({ params }) {
              
                 <p>{post.content[1] || post.content[0]}</p>
               </div>
-              {inlineImages[0] && <Image className="article-inline-image" src={inlineImages[0]} alt="" width={900} height={560} />}
-              <h2 id="spotlight">Lorem Ipsum Dolor</h2>
+              {/* {inlineImages[0] && <Image className="article-inline-image" src={inlineImages[0]} alt="" width={900} height={560} />} */}
+            
               <p>{post.content[2] || post.content[1] || post.content[0]}</p>
-              {inlineImages[1] && <Image className="article-inline-image" src={inlineImages[1]} alt="" width={900} height={560} />}
-              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<cite>— Lorem Ipsum</cite></blockquote>
+              {/* {inlineImages[1] && <Image className="article-inline-image" src={inlineImages[1]} alt="" width={900} height={560} />} */}
+               
+              {/* <blockquote>{post.content[post.content.length - 1]}<cite>— {author.name}</cite></blockquote> */}
+              
               {post.content.slice(3).map((paragraph, i) => <p key={i}>{paragraph}</p>)}
-              <div className="more-buzz"><h3>Lorem Ipsum</h3>{getRelatedPosts(post).slice(0, 4).map((p) => <Link href={`/${p.category}/${p.slug}`} key={p.slug}>＋ {p.title}</Link>)}</div>
-              <h2 id="next">Lorem Ipsum?</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+               {/* <h2 id="spotlight">Galliano was convicted in an antisemitism trial in France</h2> */}
+               {post.content.slice(4).map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+              <div className="more-buzz"><h3>More Buzz</h3>{getRelatedPosts(post).slice(0, 4).map((p) => <Link href={`/${p.category}/${p.slug}`} key={p.slug}>＋ {p.title}</Link>)}</div>
+              <h2 id="next">What Happens Next?</h2>
+              <p>As this story develops, expect follow-up reporting on how it plays out — check back for updates as new details emerge.</p>
               
             </div>
           </div>
 
-          <div className="article-share-bottom"><b>⌁ Lorem Ipsum</b><span>𝕏</span><span>F</span><span>↗</span></div>
+          <div className="article-share-bottom"><b>⌁ Share This Story</b><span>𝕏</span><span>F</span></div>
           <section className="comment-section">
-            <h3>◯ Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor sit amet. Required fields are marked <b>*</b></p>
-            <textarea placeholder="Lorem ipsum" />
-            <div className="comment-fields"><input placeholder="Lorem ipsum" /><input placeholder="Lorem ipsum" /><input placeholder="Lorem ipsum" /></div>
-            <label><input type="checkbox" /> Lorem ipsum dolor sit amet.</label>
-            <button className="comment-submit">Lorem Ipsum</button>
+            <h3>◯ Join the Discussion</h3>
+            <p>Share your thoughts below. Required fields are marked <b>*</b></p>
+            <textarea placeholder="Write a comment..." />
+            <div className="comment-fields"><input placeholder="Name *" /><input placeholder="Email *" /><input placeholder="Website" /></div>
+            <label><input type="checkbox" /> Save my name and email for the next time I comment.</label>
+            <button className="comment-submit">Post Comment</button>
           </section>
         </article>
         <ArticleSidebar current={post} />

@@ -7,7 +7,7 @@ export default function PrivacyPage() {
         <div className="wrap">
           <span className="eyebrow" style={{ color: "var(--brick)" }}>Legal</span>
           <h1 className="page-header-title">Privacy Policy</h1>
-          <p className="page-header-copy">Last updated August 2026.</p>
+          <p className="page-header-copy">Last updated September 2026.</p>
         </div>
       </div>
 

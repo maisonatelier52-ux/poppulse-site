@@ -3,18 +3,8 @@ import Image from "next/image";
 import { getAllPosts, getAuthorBySlug } from "@/lib/data";
 import { photo } from "@/lib/images";
 
-const fallbackCards = [
-  { title: "Lorem Ipsum Dolor Sit Amet", slug: "runway-to-real-life-fashion", image: "pop-03" },
-  { title: "Consectetur Adipiscing Elit Sed Do", slug: "folk-tales-reimagined-culture", image: "pop-07" },
-  { title: "Celebrity Cameos: Surprise Appearances That Stole the Show", slug: "casting-surprises-of-the-season", image: "pop-02" },
-];
-
-export default function GalaStripSection() {
-  const posts = getAllPosts();
-  const cards = fallbackCards.map((item) => {
-    const post = posts.find((p) => p.slug === item.slug);
-    return { ...item, author: post?.author || "ana-ferreira" };
-  });
+export default function GalaStripSection({ posts }) {
+  const cards = posts || getAllPosts().slice(0, 3);
 
   return (
     <section className="gala-strip-section">
@@ -31,10 +21,11 @@ export default function GalaStripSection() {
                     <Image src={photo(card.image, 520, 300)} alt={card.title} width={520} height={300} />
                   </Link>
                   <Link href={`/${card.category}/${card.slug}`}><h3>{card.title}</h3></Link>
-                  <div className="gala-card-meta"><span>2 years ago</span><span>By <b>{author?.name || "Clara Quick"}</b></span></div>
+                  <div className="gala-card-meta"><span>3 hrs ago</span><span>By <b>{author?.name || "Clara Quick"}</b></span></div>
                 </article>
               );
             })}
+
           </div>
         
         </div>

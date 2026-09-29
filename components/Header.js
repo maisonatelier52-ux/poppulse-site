@@ -31,9 +31,9 @@ export default function Header() {
     <>
       <div className="reference-topline">
         <div className="wrap reference-topline-inner">
-          <span className="reference-date">August 20, 2026</span>
+          <span className="reference-date">September 06, 2026</span>
           <span className="reference-breadcrumb" aria-label="Categories">
-            <span>Thursday</span>
+            <span>Sunday</span>
           </span>
           <SocialIcons className="reference-socials" links />
         </div>
@@ -44,8 +44,8 @@ export default function Header() {
           <button className="reference-menu" aria-label="Open menu" onClick={() => setMenuOpen(true)}><span /><span /><span /><span /></button>
           <Link href="/" className="reference-logo"><Image src="/logo.svg" alt="PopPulse" width={154} height={34} priority /></Link>
           <div className="reference-utilities">
-            <Link href="/about">Advertise</Link>
-            <Link href="/contact">Deal</Link>
+            <Link href="/about">About</Link>
+           
             <Link href="/contact">Contact</Link>
             <button onClick={openSubscribe}>Newsletter</button>
             <button className="reference-search" aria-label="Search" onClick={() => setSearchOpen(true)}>⌕</button>
