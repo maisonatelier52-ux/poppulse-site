@@ -2836,6 +2836,7 @@ p {
 
 .reference-social-proof {
   padding: 8px 0 10px;
+  display: none;
 }
 
 .reference-social-proof-grid {
