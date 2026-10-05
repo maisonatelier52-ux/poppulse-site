@@ -50,7 +50,7 @@ export default function SearchOverlay({ open, onClose }) {
           <input
             ref={inputRef}
             type="text"
-            placeholder="Search articles, topics, authors…"
+            placeholder="Search posts and topics…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -81,7 +81,7 @@ export default function SearchOverlay({ open, onClose }) {
                 onClick={onClose}
               >
                 <div className="search-result-media">
-                  <Image src={photo(post.image, 200, 200)} alt="" width={84} height={84} />
+                  <Image src={photo(post.image, 200, 200)} alt={post.imageAlt || ""} width={84} height={84} />
                 </div>
                 <div>
                   <span className="tag" style={{ color: cat?.tint }}>{cat?.name}</span>

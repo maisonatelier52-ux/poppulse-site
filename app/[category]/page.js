@@ -9,7 +9,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }) {
   const category = getCategoryBySlug(params.category);
-  return { title: category ? `${category.name} — PopPulse` : "PopPulse" };
+  return { title: category ? category.name : "PopPulse" };
 }
 
 export default function CategoryPage({ params }) {
@@ -24,7 +24,7 @@ export default function CategoryPage({ params }) {
           <span className="tag" style={{ color: category.tint }}>Section</span>
           <h1 className="page-header-title">{category.name}</h1>
           <p className="page-header-copy">
-            {posts.length} {posts.length === 1 ? "story" : "stories"} filed under {category.name.toLowerCase()}.
+            {posts.length} {posts.length === 1 ? "post" : "posts"} filed under {category.name.toLowerCase()}.
           </p>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default function CategoryPage({ params }) {
           <div className="layout-with-sidebar">
             <div>
               {posts.length === 0 ? (
-                <p className="search-empty">No stories in this section yet — check back soon.</p>
+                <p className="search-empty">No posts in this section yet — check back soon.</p>
               ) : (
                 <div className="article-grid article-grid--2">
                   {posts.map((post) => <ArticleCard key={post.slug} post={post} />)}

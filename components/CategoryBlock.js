@@ -1,20 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getCategoryBySlug, getPostsByCategory, getAuthorBySlug } from "@/lib/data";
+import { formatDate, getCategoryBySlug, getPostsByCategory } from "@/lib/data";
 import { photo } from "@/lib/images";
 import NewsletterBox from "@/components/NewsletterBox";
 import SectionContainedSticky from "@/components/SectionContainedSticky";
 
 function Meta({ post }) {
-  const author = getAuthorBySlug(post.author);
-  return <div className="mag-meta"><span>3 hrs ago</span><span>By <b>{author?.name || "Clara Quick"}</b></span></div>;
+  return <div className="mag-meta"><span>{formatDate(post.date)}</span></div>;
 }
 
 function SmallCard({ post, overlay = false }) {
   return (
     <article className={`mag-small-card${overlay ? " mag-small-card--overlay" : ""}`}>
       <Link href={`/${post.category}/${post.slug}`} className="mag-small-media">
-        <Image src={photo(post.image, 700, 430)} alt={post.title} width={700} height={430} />
+        <Image src={photo(post.image, 700, 430)} alt={post.imageAlt || post.title} width={700} height={430} />
       
       </Link>
       <Link href={`/${post.category}/${post.slug}`}><h3 className="mag-small-title">{post.title}</h3></Link>
@@ -28,7 +27,7 @@ function FeatureCard({ post, badge }) {
   return (
     <article className="mag-feature">
       <Link href={`/${post.category}/${post.slug}`} className="mag-feature-media">
-        <Image src={photo(post.image, 1200, 720)} alt={post.title} width={1200} height={720} />
+        <Image src={photo(post.image, 1200, 720)} alt={post.imageAlt || post.title} width={1200} height={720} />
         <span className="tag-badge">{badge || category?.name}</span>
       </Link>
       <Link href={`/${post.category}/${post.slug}`}><h3 className="mag-feature-title">{post.title}</h3></Link>
@@ -38,7 +37,7 @@ function FeatureCard({ post, badge }) {
   );
 }
 
-export default function CategoryBlock({ slug, variant = "feature", showAd = false, posts: postsProp }) {
+export default function CategoryBlock({ slug, variant = "feature", posts: postsProp }) {
   const category = getCategoryBySlug(slug);
   const posts = postsProp || getPostsByCategory(slug);
   if (!posts.length) return null;
@@ -67,12 +66,6 @@ export default function CategoryBlock({ slug, variant = "feature", showAd = fals
               <div className="travel-secondary-grid">
                 {posts.slice(4, 6).map((post) => <SmallCard key={post.slug} post={post} />)}
               </div>
-              {showAd && (
-                <div className="mag-ad">
-                  <span>- Advertisement -</span>
-                  <div><strong>POPCULT</strong><b>•</b></div>
-                </div>
-              )}
             </div>
           </div>
         ) : isFashion ? (

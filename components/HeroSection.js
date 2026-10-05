@@ -13,7 +13,7 @@ export default function HeroSection({ post }) {
         <Link href={`/${post.category}/${post.slug}`} className="hero-centered-media">
           <Image
             src={photo(post.image, 1400, 700)}
-            alt={post.title}
+            alt={post.imageAlt || post.title}
             width={1400}
             height={700}
             priority

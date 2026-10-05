@@ -1,4 +1,4 @@
-export const metadata = { title: "About — PopPulse" };
+export const metadata = { title: "About the blog" };
 
 export default function AboutPage() {
   return (
@@ -6,10 +6,10 @@ export default function AboutPage() {
       <div className="page-header">
         <div className="wrap">
           <span className="eyebrow" style={{ color: "var(--brick)" }}>About PopPulse</span>
-          <h1 className="page-header-title">Culture, unfiltered</h1>
+          <h1 className="page-header-title">Useful ideas with a visible source trail</h1>
           <p className="page-header-copy">
-            PopPulse is a digital magazine covering technology, business, politics, sports,
-            world news, finance and entertainment.
+            PopPulse is an independent blog publishing practical explainers and essays
+            about technology, money, culture and public life.
           </p>
         </div>
       </div>
@@ -18,29 +18,47 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="static-content">
             <p>
-              PopPulse started with a simple idea: the internet doesn't need another
-              outlet chasing every headline first — it needs one that actually gets the
-              story right, with a bit of personality. We cover the premieres, the red
-              carpets and the trends, but we take the time to find the angle nobody else
-              bothered to chase down.
+              PopPulse is designed for readers who want to understand a subject quickly
+              without losing the evidence behind it. Posts explain the central idea,
+              why it matters and where readers can inspect the reporting, research or
+              public records used.
             </p>
             <h2>What we cover</h2>
             <p>
-              Our desks are organised around seven beats — Technology, Business, Politics, Sports,
-              World, Finance and Entertainment — each led by a writer who follows the
-              subject closely and brings a clear editorial point of view.
+              The blog covers Technology, Business, Politics, Sports, World, Finance and
+              Entertainment. Most posts are explainers, reading guides and evidence-led
+              commentary rather than live or breaking-news coverage.
             </p>
-            <h2>How we're funded</h2>
+            <h2 id="standards">Sourcing policy</h2>
             <p>
-              PopPulse is funded by advertising and reader subscriptions. We label
-              sponsored content clearly, and our editorial desk never trades coverage
-              for a partnership.
+              Factual claims are attributed to named sources wherever possible. Posts
+              distinguish evidence from interpretation, label important uncertainty and
+              link to the material used. Headlines should not claim more than the cited
+              evidence supports.
+            </p>
+            <h2>Corrections and updates</h2>
+            <p>
+              An updated date records the latest check; it does not turn an older post into
+              live coverage. Material corrections should explain what changed. A verified
+              contact route will be added before public launch.
+            </p>
+            <h2>Independence and transparency</h2>
+            <p>
+              PopPulse does not currently run advertising, paid memberships or sponsored
+              posts. If that changes, commercial relationships will be labeled and kept
+              separate from editorial judgments.
+            </p>
+            <h2>Illustrations</h2>
+            <p>
+              Article images are original AI-assisted editorial illustrations created for
+              PopPulse. They are interpretive visual companions—not documentary photographs,
+              eyewitness evidence or representations of a source—and are labeled on every post.
             </p>
             <h2>Get in touch</h2>
             <p>
-              Story tips, corrections and general enquiries are all welcome — see our{" "}
-              <a href="/contact" style={{ textDecoration: "underline" }}>contact page</a>{" "}
-              for the right address to use.
+              The <a href="/contact" style={{ textDecoration: "underline" }}>contact page</a>{" "}
+              records the current contact status and will list a verified address before
+              the blog is made public.
             </p>
           </div>
         </div>

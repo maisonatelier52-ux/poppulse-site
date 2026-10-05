@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://poppulse-editorial-2026.web-developm-8730.chatgpt.site/sitemap.xml

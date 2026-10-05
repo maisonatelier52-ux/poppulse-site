@@ -15,7 +15,7 @@ export default function TrendingStrip() {
             return (
               <Link href={`/${post.category}/${post.slug}`} className="trending-strip-item" key={post.slug}>
                 <div className="trending-strip-media">
-                  <Image src={photo(post.image, 200, 200)} alt={post.title} width={140} height={140} />
+                  <Image src={photo(post.image, 200, 200)} alt={post.imageAlt || post.title} width={140} height={140} />
                 </div>
                 <span className="tag" style={{ color: category?.tint }}>
                   {category?.name}

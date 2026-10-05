@@ -1,4 +1,4 @@
-export const metadata = { title: "Privacy — PopPulse" };
+export const metadata = { title: "Privacy" };
 
 export default function PrivacyPage() {
   return (
@@ -15,25 +15,25 @@ export default function PrivacyPage() {
         <div className="wrap">
           <div className="static-content">
             <p>
-              This is placeholder policy text for the PopPulse template. Replace it with your
-              organisation's actual privacy policy before this site goes live with real
-              subscribers.
+              PopPulse is currently a static, private preview. The site does not offer user
+              accounts and its contact page does not collect or transmit
+              personal information.
             </p>
             <h2>Information we collect</h2>
             <ul>
-              <li>Email address, if you subscribe to the newsletter</li>
-              <li>Basic analytics on which articles are read</li>
-              <li>Any information you submit through the contact form</li>
+              <li>No contact-form messages are collected.</li>
+              <li>No advertising or analytics trackers have been added by PopPulse.</li>
             </ul>
             <h2>How we use it</h2>
             <p>
-              Email addresses are used only to send the newsletter you signed up for.
-              Analytics data is aggregated and never sold to third parties.
+              The hosting provider may process standard technical information needed to
+              serve and secure the site. This policy will be updated before analytics,
+              advertising, analytics or a working contact form is introduced.
             </p>
             <h2>Your rights</h2>
             <p>
-              You can unsubscribe from the newsletter at any time using the link at the
-              bottom of every email, or by writing to support@poppulse.example.
+              Because PopPulse does not currently collect personal information through the
+              site, there is no account record or contact submission to access or delete.
             </p>
           </div>
         </div>

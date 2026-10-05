@@ -1,13 +1,22 @@
 import "./globals.css";
-import { SubscribeProvider } from "@/lib/SubscribeContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SubscribePopup from "@/components/SubscribePopup";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "PopPulse — Technology, Business, Politics, Sports, World, Finance & Entertainment",
-  description:
-    "PopPulse is a digital magazine covering technology, business, politics, sports, world news, finance and entertainment.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "PopPulse — Useful explainers on technology, money, culture and public life",
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: "PopPulse — Useful explainers on technology, money, culture and public life",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+  },
   icons: {
     icon: "/favicon.svg",
   },
@@ -17,12 +26,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <SubscribeProvider>
-          <Header />
-          {children}
-          <Footer />
-          <SubscribePopup />
-        </SubscribeProvider>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

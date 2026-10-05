@@ -3,12 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { categories } from "@/lib/data";
-import { useSubscribe } from "@/lib/SubscribeContext";
-import SocialIcons from "./SocialIcons";
 
 export default function SideMenu({ open, onClose }) {
-  const { open: openSubscribe } = useSubscribe();
-
   return (
     <>
       <div
@@ -32,7 +28,7 @@ export default function SideMenu({ open, onClose }) {
 
         <nav className="side-menu-nav" onClick={onClose}>
           <Link href="/">Home</Link>
-          <Link href="/authors">Authors</Link>
+          <Link href="/authors">Editorial identity</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
@@ -48,18 +44,7 @@ export default function SideMenu({ open, onClose }) {
           </div>
         </div>
 
-        <div className="side-menu-footer">
-          <button
-            className="btn btn-outline-paper"
-            onClick={() => {
-              onClose();
-              openSubscribe();
-            }}
-          >
-            Subscribe
-          </button>
-          <SocialIcons className="side-menu-social" links />
-        </div>
+      
       </aside>
     </>
   );

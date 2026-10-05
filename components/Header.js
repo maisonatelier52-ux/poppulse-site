@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSubscribe } from "@/lib/SubscribeContext";
 import SideMenu from "./SideMenu";
 import SearchOverlay from "./SearchOverlay";
 import NewsTicker from "./NewsTicker";
@@ -25,7 +24,6 @@ const navItems = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const { open: openSubscribe } = useSubscribe();
 
   return (
     <>
@@ -35,7 +33,7 @@ export default function Header() {
           <span className="reference-breadcrumb" aria-label="Categories">
             <span>Sunday</span>
           </span>
-          <SocialIcons className="reference-socials" links />
+          <SocialIcons className="reference-socials" />
         </div>
       </div>
 
@@ -45,9 +43,8 @@ export default function Header() {
           <Link href="/" className="reference-logo"><Image src="/logo.svg" alt="PopPulse" width={154} height={34} priority /></Link>
           <div className="reference-utilities">
             <Link href="/about">About</Link>
-           
             <Link href="/contact">Contact</Link>
-            <button onClick={openSubscribe}>Newsletter</button>
+            <Link href="/contact" className="reference-newsletter">Newsletter</Link>
             <button className="reference-search" aria-label="Search" onClick={() => setSearchOpen(true)}>⌕</button>
           </div>
         </div>

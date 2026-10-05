@@ -1,7 +1,7 @@
 import { authors } from "@/lib/data";
 import AuthorCard from "@/components/AuthorCard";
 
-export const metadata = { title: "Authors — PopPulse" };
+export const metadata = { title: "Editorial identity" };
 
 export default function AuthorsPage() {
   return (
@@ -9,10 +9,10 @@ export default function AuthorsPage() {
       <div className="page-header">
         <div className="wrap">
           <span className="eyebrow" style={{ color: "var(--brick)" }}>PopPulse</span>
-          <h1 className="page-header-title">Authors</h1>
+          <h1 className="page-header-title">Editorial identity</h1>
           <p className="page-header-copy">
-            The writers and editors covering technology, business, politics, sports, world news,
-            finance and entertainment from around the world.
+            All current posts are published under one editorial identity. Named contributors
+            will appear only when their identity and role can be verified.
           </p>
         </div>
       </div>

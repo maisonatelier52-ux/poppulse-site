@@ -9,7 +9,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }) {
   const author = getAuthorBySlug(params.slug);
-  return { title: author ? `${author.name} — PopPulse` : "PopPulse" };
+  return { title: author ? author.name : "PopPulse" };
 }
 
 export default function AuthorPage({ params }) {
@@ -42,10 +42,10 @@ export default function AuthorPage({ params }) {
       <section className="section" style={{ borderTop: "none" }}>
         <div className="wrap">
           <div className="section-head">
-            <h2 className="section-title">Articles by {author.name.split(" ")[0]}</h2>
+            <h2 className="section-title">Posts by {author.name}</h2>
           </div>
           {posts.length === 0 ? (
-            <p className="search-empty">No published stories yet.</p>
+            <p className="search-empty">No published posts yet.</p>
           ) : (
             <div className="article-grid article-grid--3">
               {posts.map((post) => (

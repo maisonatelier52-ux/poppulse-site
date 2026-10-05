@@ -1801,38 +1801,6 @@ p {
   margin-top: 4px;
 }
 
-/* ---------------------------------------------------------------- */
-/* Ad banner placeholder                                             */
-/* ---------------------------------------------------------------- */
-.ad-banner {
-  display: block;
-  text-align: center;
-}
-
-.ad-banner-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--slate);
-  margin-bottom: 10px;
-}
-
-.ad-banner-box {
-  background: var(--paper-2);
-  border: 1px solid var(--paper-3);
-  padding: 32px;
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--ink);
-}
-
-.ad-banner-box .accent {
-  color: var(--brick);
-}
-
-
 /* ================================================================== */
 /* Magazine homepage layout — reference design                        */
 /* ================================================================== */
@@ -2124,6 +2092,14 @@ p {
   font: 9px/1.45 var(--font-body);
   margin-bottom: 12px;
   color: #444;
+}
+
+.mag-newsletter > a {
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  color: var(--brick);
+  font: 700 12px/1.4 var(--font-body);
+  padding-bottom: 2px;
 }
 
 .mag-newsletter form {
@@ -2560,9 +2536,9 @@ p {
   min-height: 28px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 17px;
-  overflow-x: auto;
+  justify-content: space-between;
+  gap: clamp(10px, 1.2vw, 17px);
+  overflow: visible;
   white-space: nowrap;
 }
 
@@ -4262,14 +4238,23 @@ p {
 
 .article-hero {
   margin: 25px 0 22px;
-  aspect-ratio: 1.78;
-  overflow: hidden
 }
 
 .article-hero img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover
+  height: auto;
+  aspect-ratio: 1.78;
+  object-fit: cover;
+  overflow: hidden
+}
+
+.article-hero figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.45
 }
 
 .article-content-grid {
@@ -4501,6 +4486,205 @@ p {
   padding: 10px 25px;
   font-size: 14px;
   font-weight: 700
+}
+
+.article-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+  color: #6b6b6b;
+  font-size: 13px
+}
+
+.article-breadcrumb a:hover {
+  color: #c9171d
+}
+
+.article-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  margin-top: 10px;
+  color: #626262;
+  font-size: 13px
+}
+
+.article-dates span + span:before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 0 9px 3px 0;
+  border-radius: 50%;
+  background: #999
+}
+
+.article-byline a:hover {
+  text-decoration: underline
+}
+
+.article-takeaways,
+.article-sources {
+  margin: 0 0 34px;
+  padding: 24px 26px;
+  border: 1px solid #dedede;
+  border-top: 4px solid #ed1c24;
+  background: #fafafa
+}
+
+.article-box-label {
+  margin: 0 0 8px !important;
+  color: #c9171d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: uppercase
+}
+
+.article-takeaways h2,
+.article-sources h2,
+.article-feedback h2 {
+  margin: 0 0 14px;
+  font-size: 28px
+}
+
+.article-takeaways ul,
+.article-sources ul {
+  margin: 0;
+  padding-left: 20px
+}
+
+.article-takeaways li {
+  margin: 0 0 10px;
+  padding-left: 5px
+}
+
+.article-takeaways li:last-child {
+  margin-bottom: 0
+}
+
+.article-context-block {
+  margin: 36px 0;
+  padding-left: 22px;
+  border-left: 4px solid #ed1c24
+}
+
+.article-context-block h2 {
+  margin-top: 0
+}
+
+.article-context-block p {
+  margin-bottom: 0
+}
+
+.article-sources {
+  margin-top: 44px;
+  border-top-color: #1f2933;
+  background: #f7f7f5
+}
+
+.article-sources-intro {
+  max-width: 680px;
+  color: #555;
+  font-size: 15px
+}
+
+.article-sources li {
+  margin: 0 0 12px
+}
+
+.article-sources a {
+  color: #b9141a;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px
+}
+
+.article-sources li span {
+  display: block;
+  color: #666;
+  font-size: 13px
+}
+
+.article-transparency {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px 16px;
+  align-items: center;
+  margin: 30px 0;
+  padding: 17px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+  line-height: 1.4
+}
+
+.article-transparency b {
+  color: #c9171d;
+  text-transform: uppercase;
+  letter-spacing: .06em
+}
+
+.article-transparency a {
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px
+}
+
+.article-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin: 0 0 44px;
+  padding: 26px;
+  background: #171717;
+  color: #fff
+}
+
+.article-feedback h2,
+.article-feedback p {
+  margin-top: 0
+}
+
+.article-feedback p:last-child {
+  margin-bottom: 0;
+  color: #d7d7d7
+}
+
+.article-feedback > a {
+  flex: 0 0 auto;
+  padding: 11px 15px;
+  background: #ed1c24;
+  color: #fff;
+  font-weight: 800
+}
+
+@media (max-width: 700px) {
+  .article-dates {
+    display: grid;
+    gap: 4px
+  }
+
+  .article-dates span + span:before {
+    display: none
+  }
+
+  .article-takeaways,
+  .article-sources {
+    padding: 20px
+  }
+
+  .article-transparency {
+    grid-template-columns: 1fr
+  }
+
+  .article-feedback {
+    align-items: flex-start;
+    flex-direction: column
+  }
 }
 
 .article-sidebar {
@@ -5022,6 +5206,13 @@ p {
   margin-left: 12px;
 }
 
+.reference-utilities>.reference-newsletter {
+  margin-left: 12px;
+  border: 1px solid #111;
+  background: #fff;
+  padding: 4px 8px;
+}
+
 .reference-grid-menu,
 .reference-menu {
   display: grid;
@@ -5135,12 +5326,24 @@ body {
   .reference-nav {
     gap: 22px;
     min-height: 58px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    touch-action: pan-x;
   }
 
   .reference-nav::-webkit-scrollbar {
     display: none;
+  }
+
+  .reference-nav>* {
+    flex: 0 0 auto;
   }
 
   .reference-nav a {
@@ -5857,4 +6060,7 @@ body {
 
 .footer .social-icon:hover img {
   opacity: 0.75;
+}
+.latest-mag-layout--single {
+  grid-template-columns: minmax(0, 1fr);
 }

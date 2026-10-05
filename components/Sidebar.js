@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <aside>
       <div className="sidebar-widget">
-        <div className="text-list-title">Latest News</div>
+        <div className="text-list-title">Latest Posts</div>
         <div className="text-list">
           {latest.map((post) => {
             const category = getCategoryBySlug(post.category);
@@ -27,14 +27,6 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className="sidebar-widget">
-        <a href="#" className="ad-banner">
-          <span className="ad-banner-label">Advertisement</span>
-          <div className="ad-banner-box">
-            Pop<span className="accent">Pulse</span>
-          </div>
-        </a>
-      </div>
     </aside>
   );
 }

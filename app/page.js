@@ -1,7 +1,7 @@
 import { getAllPosts, getPostsByCategory } from "@/lib/data";
 import CategoryBlock from "@/components/CategoryBlock";
 import LatestNewsSection from "@/components/LatestNewsSection";
-import { CelebrityBuzzSection, SocialProofStrip } from "@/components/CelebrityLeadSection";
+import { CelebrityBuzzSection } from "@/components/CelebrityLeadSection";
 import CelebrityLeadSection from "@/components/CelebrityLeadSection";
 import GalaStripSection from "@/components/GalaStripSection";
 
@@ -36,9 +36,8 @@ export default function HomePage() {
       <CelebrityLeadSection hero={heroPost} sidebarPosts={sidebarPosts} />
       <GalaStripSection posts={galaPosts} />
       <CelebrityBuzzSection posts={buzzPosts} />
-      <SocialProofStrip />
       <CategoryBlock slug="technology" variant="feature" posts={techPosts} />
-      <CategoryBlock slug="sports" variant="grid" showAd posts={sportsPosts} />
+      <CategoryBlock slug="sports" variant="grid" posts={sportsPosts} />
       <CategoryBlock slug="entertainment" variant="feature" posts={entPosts} />
       <LatestNewsSection posts={latestPosts} />
     </main>
