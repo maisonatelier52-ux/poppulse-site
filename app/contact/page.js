@@ -7,12 +7,10 @@ export default function ContactPage() {
     <main>
       <div className="page-header">
         <div className="wrap">
-          <span className="eyebrow" style={{ color: "var(--brick)" }}>Contact &amp; corrections</span>
-          <h1 className="page-header-title">Correction standards and contact status</h1>
+          <span className="eyebrow" style={{ color: "var(--brick)" }}>Get in touch</span>
+          <h1 className="page-header-title">Contact</h1>
           <p className="page-header-copy">
-            A verified contact route will be published before public launch. When it is
-            available, correction requests should identify the post, the passage at issue
-            and a reliable source supporting the change.
+Story tips, corrections, subscriptions or something else — pick the right desk below and we'll route it accordingly.
           </p>
         </div>
       </div>

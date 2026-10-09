@@ -55,7 +55,7 @@ export default function Header() {
           <div className="reference-utilities">
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
-            <Link href="/contact" className="reference-newsletter">Newsletter</Link>
+          <button>Newsletter</button>
             <button className="reference-search" aria-label="Search" onClick={() => setSearchOpen(true)}>⌕</button>
           </div>
         </div>
