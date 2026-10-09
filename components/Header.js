@@ -8,6 +8,7 @@ import SearchOverlay from "./SearchOverlay";
 import NewsTicker from "./NewsTicker";
 import TrendingStrip from "./TrendingStrip";
 import SocialIcons from "./SocialIcons";
+import NewsletterModal from "./NewsletterModal";
 
 const navItems = [
   ["Home", "/"],
@@ -24,6 +25,7 @@ const navItems = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [newsletterOpen, setNewsletterOpen] = useState(false);
 
   return (
     <>
@@ -55,7 +57,7 @@ export default function Header() {
           <div className="reference-utilities">
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
-          <button>Newsletter</button>
+         <button onClick={() => setNewsletterOpen(true)}>Newsletter</button>
             <button className="reference-search" aria-label="Search" onClick={() => setSearchOpen(true)}>⌕</button>
           </div>
         </div>
@@ -76,6 +78,7 @@ export default function Header() {
 
       <SideMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
+        <NewsletterModal open={newsletterOpen} onClose={() => setNewsletterOpen(false)} />
     </>
   );
 }
