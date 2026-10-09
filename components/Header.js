@@ -29,10 +29,21 @@ export default function Header() {
     <>
       <div className="reference-topline">
         <div className="wrap reference-topline-inner">
-          <span className="reference-date">October 06, 2026</span>
-          <span className="reference-breadcrumb" aria-label="Categories">
-            <span>Tuesday</span>
-          </span>
+         <span className="reference-date">
+  {new Date().toLocaleDateString("en-US", {
+    month: "long",
+    day: "2-digit",
+    year: "numeric",
+  })}
+</span>
+
+<span className="reference-breadcrumb" aria-label="Day">
+  <span>
+    {new Date().toLocaleDateString("en-US", {
+      weekday: "long",
+    })}
+  </span>
+</span>
           <SocialIcons className="reference-socials" />
         </div>
       </div>

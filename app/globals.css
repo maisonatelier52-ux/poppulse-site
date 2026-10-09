@@ -6065,5 +6065,33 @@ body {
 .latest-mag-layout--single {
   grid-template-columns: minmax(0, 1fr);
 }
-/*  */
+/* category page  */
+
+/* Category page: sticky right sidebar */
+.layout-with-sidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 34px;
+  align-items: start;
+  overflow: visible;
+}
+
+.layout-with-sidebar > aside {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  height: fit-content;
+  min-width: 0;
+}
+
+/* Keep sidebar normal on smaller screens */
+@media (max-width: 900px) {
+  .layout-with-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-with-sidebar > aside {
+    position: static;
+  }
+}
 
