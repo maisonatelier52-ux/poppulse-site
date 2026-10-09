@@ -624,7 +624,7 @@ p {
 
 .side-menu-nav a {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 15px;
   padding: 10px 0;
   border-bottom: 1px solid var(--line-on-ink);
 }
@@ -1327,7 +1327,7 @@ p {
   border: none;
   background: transparent;
   font-family: var(--font-display);
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: 21px;
   color: var(--ink);
 }
 
@@ -6066,10 +6066,4 @@ body {
   grid-template-columns: minmax(0, 1fr);
 }
 /*  */
-.article-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 34px;
-  align-items: start;
-  overflow: visible;
-}
+
