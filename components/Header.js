@@ -29,9 +29,9 @@ export default function Header() {
     <>
       <div className="reference-topline">
         <div className="wrap reference-topline-inner">
-          <span className="reference-date">September 06, 2026</span>
+          <span className="reference-date">October 06, 2026</span>
           <span className="reference-breadcrumb" aria-label="Categories">
-            <span>Sunday</span>
+            <span>Tuesday</span>
           </span>
           <SocialIcons className="reference-socials" />
         </div>

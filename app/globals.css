@@ -4694,10 +4694,11 @@ p {
   position: sticky;
   top: 24px;
   align-self: start;
-  height: max-content;
-  max-height: none;
+  height:  fit-content;
+  min-width: 0;
   overflow: visible;
-  min-width: 0
+  min-width: 0;
+   z-index: 5;
 }
 
 .article-side-box {
@@ -4972,7 +4973,7 @@ p {
   }
 
   .article-sidebar {
-    position: static;
+    position:  static;
     border-left: 0;
     padding-left: 0;
     display: grid;
@@ -5036,7 +5037,7 @@ p {
   }
 
   .article-sidebar {
-    display: block
+    display: block;
   }
 
   .related-news-grid {
@@ -5281,7 +5282,7 @@ p {
 /* Prevent page-level horizontal overflow on compact screens. */
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 @media (max-width: 999px) {
@@ -6063,4 +6064,12 @@ body {
 }
 .latest-mag-layout--single {
   grid-template-columns: minmax(0, 1fr);
+}
+/*  */
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 34px;
+  align-items: start;
+  overflow: visible;
 }
