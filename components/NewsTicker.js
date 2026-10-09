@@ -8,7 +8,7 @@ export default function NewsTicker() {
 
   return (
     <div className="news-ticker">
-      <span className="ticker-label">On the blog:</span>
+      <span className="ticker-label">On the News:</span>
       <div className="ticker-viewport">
         <div className="ticker-track">
           {loop.map((title, i) => (
